@@ -47,6 +47,8 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 // Home Route
 app.get('/', (req, res) => {
+  const currentTime = new Date().toISOString(); // Vaqtni ISO formatda olish
+  console.log(`[${currentTime}] Request received at '/' endpoint`);
   res.send('Welcome to the Express MongoDB CRUD API');
 });
 
